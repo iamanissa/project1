@@ -1,11 +1,9 @@
-//User should be able to click on 2 different boxes, reveal color and to see if they match.
-
-//Create 2x2 grid.
-//attach colors to background.
-//compare background colors.
-//If colors are equal, leave revealed, if not, make them blank again.
-//When all squares are revealed, You win.
-//feature:reset board to blank.
+<!-- Create 2x2 grid.
+attach colors to background.
+compare background colors.
+If colors are equal, leave revealed, if not, make them blank again.
+When all squares are revealed, You win.
+feature:reset board to blank. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,10 +13,11 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<button>Start Game</button>
-<button>Reset Game</button>
-//TODO: (SilverLevel) Add more squares, add time limit.
-//TODO: (GoldLevel) Add card design + images and 2 player options.
+<div class="gameBtn">
+  <button id="start">Start Game</button>
+  <button id="reset">Reset Game</button>
+</div>
+
 <table>
     <tr>
       <td class="color card1"
