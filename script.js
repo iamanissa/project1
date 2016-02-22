@@ -1,13 +1,15 @@
-var cardOne = document.querySelector(".card1");
+var grid = getElementByTagName("tbody");
+var eachCard = getElementsByTagName('td');
 
-
-cardOne.addEventListener("click",colorToRed);
+grid.addEventListener("click",colorToRed);
 
 function colorToBLue(){
-  cardOne.style.backgroundColor = "blue";
+  grid.style.backgroundColor = "blue";
 }
-function colorToRed(){
-  cardOne.style.backgroundColor = "red";
+function colorToRed(e){
+  if(e.target && e.target.nodeName == "td"){
+  eachCard.style.backgroundColor = "red";
+  }
 }
 //hard code colors first
 //after, how to randomizing adding classes to div(td)
