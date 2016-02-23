@@ -17,3 +17,7 @@
 [data-color="blue"].active{
   background: blue;
 }
+
+.grayAgain{
+  background: gray;
+}

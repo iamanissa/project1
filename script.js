@@ -8,21 +8,36 @@ for(i=0;i<cards.length; i++){
 
     currentCard.classList.add("active");
     activeArray = document.querySelectorAll(".active");
-    
+
     if(activeArray.length === 2){
-      console.log(activeArray)
+      console.log(activeArray);
       if(activeArray[0].getAttribute("data-color") === activeArray[1].getAttribute("data-color")){
         itMatches = true;
         console.log("These cards are the same");
       }else{
-        itMatches = false;
         console.log("these cards are different");
+        noMatch();
       }
     }
   });
 }
 
+function noMatch(){
+  // if visible is set remove it, otherwise add it
+  for(i=0;i<cards.length; i++){
+    if(cards[i].classList.contains("active")){
+      cards[i].classList.toggle("grayAgain");
+      newCard = cards[i];
+      //wait and toggle active?
+      setTimeout(function(){
+      newCard.classList.remove("active");
+    }, 5000);
+    }
+  }
+}
 
+function yesMatch(){
 
+}
 //what does it mean to flip the cards over?
 //if active cards are the same, do something, like remove them.
