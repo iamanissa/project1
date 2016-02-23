@@ -10,10 +10,21 @@ for(i=0;i<cards.length; i++){
 function changeToColor(){
   var attr = this.getAttribute("data-color");
   this.classList.add("active");
+  stopAfterTwoCards();
   compare();
 }
 
 //only have 2 active cards at a time.
+function stopAfterTwoCards(){
+  activeArray = document.querySelectorAll(".active");
+  if(activeArray.length === 2){
+    for(i=2;i<cards.length; i++){
+      cards[i].addEventListener("click", function(e){
+        e.preventDefault();
+      });
+    }
+  }
+}
 
 function compare(){
   activeArray = document.querySelectorAll(".active");
