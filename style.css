@@ -17,6 +17,6 @@
 [data-color="blue"].active{
   background: blue;
 }
-/*.active{
-  background: red;
-}*/
+.color.grayAgain{
+  background: gray;
+}

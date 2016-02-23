@@ -15,14 +15,14 @@ function changeToColor(){
 }
 
 //only have 2 active cards at a time.
-function stopAfterTwoCards(){
+function stopAfterTwoCards(e){
   activeArray = document.querySelectorAll(".active");
   if(activeArray.length === 2){
-      cards[2].addEventListener("click", function changeToColor(){
-        this.cancelBubble = true;
+    for(i=2;i<cards.length; i++){
+      cards[i].addEventListener("click", function backToGray(){
+        this.className = "grayAgain";
       });
-      console.log(this);
-      console.log(cards[2]);
+    }
   }
 }
 
