@@ -8,7 +8,7 @@ for(i=0;i<cards.length; i++){
 
 //what do you want when you click the div(card)? change color.
 function changeToColor(){
-  var attr = this.getAttribute("data-color");
+  this.getAttribute("data-color");
   this.classList.add("active");
   stopAfterTwoCards();
   compare();
@@ -18,11 +18,11 @@ function changeToColor(){
 function stopAfterTwoCards(){
   activeArray = document.querySelectorAll(".active");
   if(activeArray.length === 2){
-    for(i=2;i<cards.length; i++){
-      cards[i].addEventListener("click", function(e){
-        e.preventDefault();
+      cards[2].addEventListener("click", function changeToColor(){
+        this.cancelBubble = true;
       });
-    }
+      console.log(this);
+      console.log(cards[2]);
   }
 }
 
