@@ -20,7 +20,7 @@ function stopAfterTwoCards(e){
   if(activeArray.length === 2){
     for(i=2;i<cards.length; i++){
       cards[i].addEventListener("click", function backToGray(){
-        this.className = "grayAgain";
+        this.className += " grayAgain";
       });
     }
   }
