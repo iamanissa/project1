@@ -26,18 +26,18 @@ function noMatch(){
   // if visible is set remove it, otherwise add it
   for(i=0;i<cards.length; i++){
     if(cards[i].classList.contains("active")){
-      cards[i].classList.toggle("grayAgain");
+      // cards[i].classList.toggle("grayAgain");
       newCard = cards[i];
       //wait and toggle active?
       setTimeout(function(){
-      newCard.classList.remove("active");
-    }, 5000);
+        this.classList.remove("active");
+      }.bind(newCard), 5000);
     }
   }
 }
 
 function yesMatch(){
-
+  
 }
 //what does it mean to flip the cards over?
 //if active cards are the same, do something, like remove them.
