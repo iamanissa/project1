@@ -1,28 +1,28 @@
-var cardOne = document.querySelector(".card1");
-var cardTwo = document.querySelector(".card2");
-var cardThree = document.querySelector(".card3");
-var cardFour = document.querySelector(".card4");
+var cards = document.querySelectorAll("[data-color]");
 
 
-cardOne.addEventListener("click",colorToRed);
-cardTwo.addEventListener("click",colorToBLue);
-cardThree.addEventListener("click",colorToRed2);
-cardFour.addEventListener("click",colorToBLue2);
-
-
-function colorToRed(){
-  cardOne.style.backgroundColor = "red";
-}
-function colorToBLue(){
-  cardTwo.style.backgroundColor = "blue";
+for(i=0;i<cards.length; i++){
+  cards[i].addEventListener("click", changeToColor);
 }
 
-function colorToRed2(){
-  cardThree.style.backgroundColor = "red";
-}
-function colorToBLue2(){
-  cardFour.style.backgroundColor = "blue";
+
+//what do you want when you click the div(card)? change color.
+function changeToColor(){
+  var attr = this.getAttribute("data-color");
+  this.classList.add("active");
+  compare();
 }
 
-//hard code colors first
-//after, how to randomizing adding classes to div(td)
+//only have 2 active cards at a time.
+
+function compare(){
+  activeArray = document.querySelectorAll(".active");
+  if(activeArray.length === 2){
+    if(activeArray[0].getAttribute("data-color") === activeArray[1].getAttribute("data-color")){
+      console.log("These cards are the same");
+    }
+  }
+}
+
+//what does it mean to flip the cards over?
+//if active cards are the same, do something, like remove them.

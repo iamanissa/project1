@@ -1,15 +1,22 @@
-table{
-  margin: 0 auto;
+.gameBtn{
+  text-align: center;
+  margin: 20px auto;
 }
 
-td{
+.color{
   border: 2px solid black;
   width: 200px;
   height:200px;
   background-color: gray;
 }
 
-.gameBtn{
-  text-align: center;
-  margin: 20px auto;
+[data-color="red"].active{
+  background: red;
 }
+
+[data-color="blue"].active{
+  background: blue;
+}
+/*.active{
+  background: red;
+}*/
