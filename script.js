@@ -6,16 +6,16 @@ for(i=0;i<cards.length; i++){
   cards[i].addEventListener("click", function(){
     var currentCard = this;
     activeArray = document.querySelectorAll(".active");
-    if(!itMatches){
-      this.classList.add("active");
-      if(activeArray.length === 2){
-        if(activeArray[0].getAttribute("data-color") === activeArray[1].getAttribute("data-color")){
-          itMatches = true;
-          console.log("These cards are the same");
-        }else{
-          itMatches = false;
-          console.log("these cards are different");
-        }
+
+    if(activeArray.length < 2){
+      currentCard.classList.add("active");
+    }else{
+      if(activeArray[0].getAttribute("data-color") === activeArray[1].getAttribute("data-color")){
+        itMatches = true;
+        console.log("These cards are the same");
+      }else{
+        itMatches = false;
+        console.log("these cards are different");
       }
     }
 
