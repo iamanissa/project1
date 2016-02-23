@@ -5,11 +5,12 @@ var cards = document.querySelectorAll("[data-color]");
 for(i=0;i<cards.length; i++){
   cards[i].addEventListener("click", function(){
     var currentCard = this;
-    activeArray = document.querySelectorAll(".active");
 
-    if(activeArray.length < 2){
-      currentCard.classList.add("active");
-    }else{
+    currentCard.classList.add("active");
+    activeArray = document.querySelectorAll(".active");
+    
+    if(activeArray.length === 2){
+      console.log(activeArray)
       if(activeArray[0].getAttribute("data-color") === activeArray[1].getAttribute("data-color")){
         itMatches = true;
         console.log("These cards are the same");
@@ -18,7 +19,6 @@ for(i=0;i<cards.length; i++){
         console.log("these cards are different");
       }
     }
-
   });
 }
 
