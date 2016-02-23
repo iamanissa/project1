@@ -12,8 +12,8 @@ for(i=0;i<cards.length; i++){
     if(activeArray.length === 2){
       console.log(activeArray);
       if(activeArray[0].getAttribute("data-color") === activeArray[1].getAttribute("data-color")){
-        itMatches = true;
         console.log("These cards are the same");
+        yesMatch();
       }else{
         console.log("these cards are different");
         noMatch();
@@ -23,21 +23,33 @@ for(i=0;i<cards.length; i++){
 }
 
 function noMatch(){
-  // if visible is set remove it, otherwise add it
   for(i=0;i<cards.length; i++){
+    // if visible is set remove it, otherwise add it
     if(cards[i].classList.contains("active")){
-      // cards[i].classList.toggle("grayAgain");
-      newCard = cards[i];
-      //wait and toggle active?
+      flipCard = cards[i];
       setTimeout(function(){
         this.classList.remove("active");
-      }.bind(newCard), 5000);
+      }.bind(flipCard), 1000);
     }
   }
 }
 
 function yesMatch(){
-  
+  for(i=0;i<cards.length; i++){
+    if(cards[i].classList.contains("active")){
+      keepCard = cards[i];
+      keepCard.classList.add("grayAgain");
+      setTimeout(function(){
+        this.classList.remove("active");
+      }.bind(keepCard), 1000);
+    }
+  }
 }
-//what does it mean to flip the cards over?
-//if active cards are the same, do something, like remove them.
+//TODO: what happens when you win?
+//TODO: add shuffle function.
+
+//TODO: turn cards into grid.
+//TODO: Maybe make console.logs appear at top for user to see
+//TODO: silver: add pictures?
+//TODO: gold: how to reset without refreshing the page?
+//TODO: gold: Does the start button do anything?

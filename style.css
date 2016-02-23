@@ -19,5 +19,6 @@
 }
 
 .grayAgain{
-  background: gray;
+  border:2px solid green;
+  border-radius: 20px;
 }
