@@ -50,14 +50,17 @@ function gameWon(){
   var playerWin = 0;
   for(i=0;i<cards.length; i++){
     if(cards[i].classList.contains("grayAgain")){
+      win = document.querySelector(".win")
       playerWin += 1;
       if(playerWin === document.querySelectorAll("[data-color]").length){
         console.log("You Win!");
+        win.classList.remove("hidden");
+        win.classList.add("visible");
       }
     }
   }
 }
-//if win, print "you found all matches. You WIN!"
+
 
 //TODO: what happens when you win?
 //TODO: add shuffle function.

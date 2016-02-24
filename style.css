@@ -22,3 +22,15 @@
   border:2px solid green;
   border-radius: 20px;
 }
+
+.win{
+  text-align: center;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.visible{
+  visibility: visible;
+}
