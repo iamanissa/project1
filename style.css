@@ -3,11 +3,19 @@
   margin: 20px auto;
 }
 
+#board{
+  width: 430px;
+  height: 430px;
+  margin: 0 auto;}
+
 .color{
   border: 2px solid black;
   width: 200px;
   height:200px;
   background-color: gray;
+  border-radius: 20px;
+  margin: 5px;
+  float: right;
 }
 
 [data-color="red"].active{
@@ -20,7 +28,6 @@
 
 .grayAgain{
   border:2px solid green;
-  border-radius: 20px;
 }
 
 .win{

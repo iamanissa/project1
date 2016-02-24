@@ -1,6 +1,22 @@
-var itMatches = false;
+
+arrayOfClasses = ["red", "red", "blue", "blue"];
+var newDeck = shuffleDeck(arrayOfClasses);
+var board1 = document.querySelector("#board");
+
+function resetDeck(){
+
+  return newDeck;
+}
+
+for(i=0;i<newDeck.length; i++){
+  var div = document.createElement("div");
+  div.classList.add("color");
+  board1.appendChild(div);
+  div.setAttribute("data-color", newDeck[i]);
+}
+
 var cards = document.querySelectorAll("[data-color]");
-var startingDeck = ["dog", "dog", "rabbit", "rabbit"];
+// var startingDeck = ["dog", "dog", "rabbit", "rabbit"];
 
 
 for(i=0;i<cards.length; i++){
@@ -76,18 +92,10 @@ function shuffleDeck(array){
   return array;
 }
 
-function resetDeck(){
-  var newDeck = shuffleDeck(startingDeck);
-  for(i=0; i<newDeck.length; i++){
-    cards[i].classList.add(newDeck[i]);
-  }
-}
 
-var shuffledArray = shuffleDeck(startingDeck);
-console.log(shuffledArray);
 
-//FIXME: how to add shuffled deck classes to cards?
-//TODO: do gh-pages.
+
+//FIXME: add two classes, 'animal' & 'unique animal'
 
 //TODO: turn cards into grid.
 //TODO: Maybe make console.logs appear at top for user to see
