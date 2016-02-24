@@ -15,5 +15,10 @@ Add Object oriented js principles.
 
 Gold:
 Add card design
+Add a side menu that allows for rules, restart button, and multiplayer, themes, and difficulty levels.
 
 []User should be able to play the game against another person.
+
+<!-- TODO: restructure user stories.  -->
+<!-- TODO: review scoring rubric -->
+<!-- TODO: answer questions for presentations: what would you differently and what did you not get to? -->
