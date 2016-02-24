@@ -3,17 +3,19 @@ var arrayOfClasses = ["red", "red", "blue", "blue"];
 var newDeck = shuffleDeck(arrayOfClasses);
 var board1 = document.querySelector("#board");
 
-//TODO: Upon refreshing the page, there should be something there.
+//make start text disappear and toggle reset and start button visibility
 function startBoard(){
+  document.querySelector("h1").style.display = "none";
   makeBoard();
   isReset = document.getElementById("reset");
-  isStart = document.getElementById("start");
+  isStart = document.getElementById("firstScreen");
   isStart.classList.remove("visible");
   isStart.classList.add("hidden");
   isReset.classList.remove("hidden");
   isReset.classList.add("visible");
 }
 
+//create a function that hides html "you win" text from user and restarts board
 function resetBoard(){
   win = document.querySelector(".win");
   win.classList.add("hidden");
@@ -21,13 +23,11 @@ function resetBoard(){
   allCards = document.querySelectorAll(".color");
   for(i=0;i<allCards.length; i++){
       parent.removeChild(allCards[i]);
-      // allCards[i].classList.remove("grayAgain");
-      // allCards[i].removeAttribute("data-color");
-      //Want to remove .grayAgain and attribute data-color
   }
   makeBoard();
 }
 
+//create a function that dynamically makes the board (for reusability)
 function makeBoard(){
   for(i=0;i<newDeck.length; i++){
     var div = document.createElement("div");
@@ -36,15 +36,15 @@ function makeBoard(){
     div.setAttribute("data-color", newDeck[i]);
   }
   var cards = document.querySelectorAll("[data-color]");
-  // var startingDeck = ["dog", "dog", "rabbit", "rabbit"];
 
-
+  //decide what happens on click of each card
   for(i=0;i<cards.length; i++){
     cards[i].addEventListener("click", function(){
       var currentCard = this;
       currentCard.classList.add("active");
       activeArray = document.querySelectorAll(".active");
 
+      //if 2 cards have the class 'active' then compare to see if they match.
       if(activeArray.length === 2){
         console.log(activeArray);
         if(activeArray[0].getAttribute("data-color") === activeArray[1].getAttribute("data-color")){
@@ -59,6 +59,7 @@ function makeBoard(){
     });
   }
 
+  //if cards don't match, flip card backover, and allow user to try again.
   function noMatch(){
     for(i=0;i<cards.length; i++){
       // if visible is set remove it, otherwise add it
@@ -71,6 +72,7 @@ function makeBoard(){
     }
   }
 
+  //if cards do match add the grayAgain class to signify they have been choosen so user will not pick them again.
   function yesMatch(){
     for(i=0;i<cards.length; i++){
       if(cards[i].classList.contains("active")){
@@ -83,6 +85,7 @@ function makeBoard(){
     }
   }
 
+  //if all cards have grayAgain class then you have found all matches and won game.
   function gameWon(){
     var playerWin = 0;
     for(i=0;i<cards.length; i++){
@@ -92,7 +95,6 @@ function makeBoard(){
         if(playerWin === document.querySelectorAll("[data-color]").length){
           console.log("You Win!");
           win.classList.remove("hidden");
-          // win.classList.add("visible");
         }
       }
     }
@@ -116,8 +118,6 @@ function shuffleDeck(array){
 document.getElementById("reset").addEventListener("click", resetBoard);
 
 document.getElementById("start").addEventListener("click", startBoard);
-
-//TODO: how to reset and still keep divs visible all the time.
 
 
 //TODO = make arrayOfClasses2 = ["red", "red", "blue", "blue", "hotpink", "hotpink", "purple", "purple", "orangered", "orangered", "gold", "gold", "teal", "teal", "olive", "olive"];

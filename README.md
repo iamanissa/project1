@@ -4,7 +4,7 @@ Creating the game Concentration (aka Memory)
 Bronze:
 [X]User should be able to click on 2 different boxes, reveal color and to see if they match.
 [X]User should be able to see all matches and win game.
-[]User should be able to reset the board and play again.
+[X]User should be able to reset the board and play again.
 
 
 Silver:
