@@ -5,7 +5,6 @@ var cards = document.querySelectorAll("[data-color]");
 for(i=0;i<cards.length; i++){
   cards[i].addEventListener("click", function(){
     var currentCard = this;
-
     currentCard.classList.add("active");
     activeArray = document.querySelectorAll(".active");
 
@@ -14,6 +13,7 @@ for(i=0;i<cards.length; i++){
       if(activeArray[0].getAttribute("data-color") === activeArray[1].getAttribute("data-color")){
         console.log("These cards are the same");
         yesMatch();
+        gameWon();
       }else{
         console.log("these cards are different");
         noMatch();
@@ -45,6 +45,20 @@ function yesMatch(){
     }
   }
 }
+
+function gameWon(){
+  var playerWin = 0;
+  for(i=0;i<cards.length; i++){
+    if(cards[i].classList.contains("grayAgain")){
+      playerWin += 1;
+      if(playerWin === document.querySelectorAll("[data-color]").length){
+        console.log("You Win!");
+      }
+    }
+  }
+}
+//if win, print "you found all matches. You WIN!"
+
 //TODO: what happens when you win?
 //TODO: add shuffle function.
 
