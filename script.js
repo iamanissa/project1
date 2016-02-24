@@ -2,6 +2,7 @@ var itMatches = false;
 var cards = document.querySelectorAll("[data-color]");
 var startingDeck = ["dog", "dog", "rabbit", "rabbit"];
 
+
 for(i=0;i<cards.length; i++){
   cards[i].addEventListener("click", function(){
     var currentCard = this;
@@ -82,8 +83,11 @@ function resetDeck(){
   }
 }
 
+var shuffledArray = shuffleDeck(startingDeck);
+console.log(shuffledArray);
 
 //FIXME: how to add shuffled deck classes to cards?
+//TODO: do gh-pages.
 
 //TODO: turn cards into grid.
 //TODO: Maybe make console.logs appear at top for user to see
