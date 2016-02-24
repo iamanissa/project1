@@ -3,6 +3,16 @@ var arrayOfClasses = ["red", "red", "blue", "blue"];
 var newDeck = shuffleDeck(arrayOfClasses);
 var board1 = document.querySelector("#board");
 
+//TODO: Upon refreshing the page, there should be something there.
+function startBoard(){
+  makeBoard();
+  isReset = document.getElementById("reset");
+  isStart = document.getElementById("start");
+  isStart.classList.remove("visible");
+  isStart.classList.add("hidden");
+  isReset.classList.remove("hidden");
+  isReset.classList.add("visible");
+}
 
 function resetBoard(){
   win = document.querySelector(".win");
@@ -11,6 +21,9 @@ function resetBoard(){
   allCards = document.querySelectorAll(".color");
   for(i=0;i<allCards.length; i++){
       parent.removeChild(allCards[i]);
+      // allCards[i].classList.remove("grayAgain");
+      // allCards[i].removeAttribute("data-color");
+      //Want to remove .grayAgain and attribute data-color
   }
   makeBoard();
 }
@@ -102,6 +115,7 @@ function shuffleDeck(array){
 
 document.getElementById("reset").addEventListener("click", resetBoard);
 
+document.getElementById("start").addEventListener("click", startBoard);
 
 //TODO: how to reset and still keep divs visible all the time.
 

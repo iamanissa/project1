@@ -40,4 +40,6 @@
 
 .visible{
   visibility: visible;
+  text-align: center;
+  margin: 20px auto;
 }
