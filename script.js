@@ -103,8 +103,7 @@ function shuffleDeck(array){
 document.getElementById("reset").addEventListener("click", resetBoard);
 
 
-//TODO: gold: how to reset without refreshing the page?
-//TODO: silver: add pictures?
-//TODO: gold: Apply object oriented principles.
+//TODO: how to reset and still keep divs visible all the time.
+
 
 //TODO = make arrayOfClasses2 = ["red", "red", "blue", "blue", "hotpink", "hotpink", "purple", "purple", "orangered", "orangered", "gold", "gold", "teal", "teal", "olive", "olive"];
