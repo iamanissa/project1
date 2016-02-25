@@ -81,7 +81,7 @@ button{
   border:2px solid green;
 }
 
-.win{
+.winClass{
   text-align: center;
   background-color: rgb(110,2,120);
     -webkit-background-clip: text;

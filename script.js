@@ -15,15 +15,17 @@ function startBoard(){
   isReset.classList.add("visible");
 }
 
-//create a function that hides html "you win" text from user and restarts board
 function resetBoard(){
-  win = document.querySelector(".win");
-  win.classList.add("hidden");
+  //remove winning text
+  var wintext = document.querySelector(".winClass");
+  wintext.parentNode.removeChild(wintext);
+  //remove class color from cards to make them disappear.
   parent = document.getElementById("board");
   allCards = document.querySelectorAll(".color");
   for(i=0;i<allCards.length; i++){
       parent.removeChild(allCards[i]);
   }
+  //run make board to make the board again.
   makeBoard();
 }
 
@@ -91,12 +93,12 @@ function makeBoard(){
     var playerWin = 0;
     for(i=0;i<cards.length; i++){
       if(cards[i].classList.contains("grayAgain")){
-        win = document.querySelector(".win");
+
         playerWin += 1;
         if(playerWin === document.querySelectorAll("[data-color]").length){
-          //create div and add win class to it.
+          //create div and add winClass class to it.
           var winDiv = document.createElement("div");
-          winDiv.classList.add("win");
+          winDiv.classList.add("winClass");
           //create paragraph with text
           var para = document.createElement("p");
           var uFoundNode = document.createTextNode("You found all the matches.");
@@ -111,7 +113,6 @@ function makeBoard(){
           //add div after firstScreen div
           var board = document.getElementsByTagName("board");
           //insert div before
-          var sp2 = document.getElementById("board");
           document.body.insertBefore(winDiv, document.body.firstChild);
 
           console.log("You Win!");
