@@ -1,6 +1,6 @@
 
 var arrayOfClasses = ["red", "red", "blue", "blue"];
-var newDeck = shuffleDeck(arrayOfClasses);
+// var newDeck = shuffleDeck(arrayOfClasses);
 var board1 = document.querySelector("#board");
 
 //make start text disappear and toggle reset and start button visibility
@@ -29,6 +29,7 @@ function resetBoard(){
 
 //create a function that dynamically makes the board (for reusability)
 function makeBoard(){
+  var newDeck = shuffleDeck(arrayOfClasses);
   for(i=0;i<newDeck.length; i++){
     var div = document.createElement("div");
     div.classList.add("color");
