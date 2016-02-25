@@ -94,15 +94,27 @@ function makeBoard(){
         playerWin += 1;
         if(playerWin === document.querySelectorAll("[data-color]").length){
 
-
+          //create div and add win class to it.
           var winDiv = document.createElement("div");
-          div.classList.add("win");
-          winDiv.appendChild(div);
-          div.setAttribute("data-color", newDeck[i]);
+          winDiv.classList.add("win");
+          //create paragraph with text
+          var para = document.createElement("p");
+          var uFoundNode = document.createTextNode("You found all the matches.");
+          para.appendChild(uFoundNode);
+          //create h1 with text
+          var boldWin = document.createElement("h2");
+          var winNode = document.createTextNode("Winner!");
+          boldWin.appendChild(winNode);
+          //paragraph and h1 to div
+          winDiv.appendChild(para);
+          winDiv.appendChild(boldWin);
+          //add div after firstScreen div
+          var board = document.getElementsByTagName("board");
+          //insert div before
+          var sp2 = document.getElementById("board");
+          document.body.insertBefore(winDiv, document.body.firstChild);
 
-          document.createElement
           console.log("You Win!");
-          win.classList.remove("hidden");
         }
       }
     }
