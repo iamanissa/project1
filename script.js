@@ -1,5 +1,4 @@
-
-var arrayOfClasses = ["red", "red", "blue", "blue"];
+var arrayOfClasses = startThisLevel();
 var board1 = document.querySelector("#board");
 
 //make start text disappear and toggle reset and start button visibility
@@ -28,6 +27,7 @@ function resetBoard(){
 
 //create a function that dynamically makes the board (for reusability)
 function makeBoard(){
+
   var newDeck = shuffleDeck(arrayOfClasses);
   for(i=0;i<newDeck.length; i++){
     var div = document.createElement("div");
@@ -115,9 +115,37 @@ function shuffleDeck(array){
   return array;
 }
 
+//working on adding levels easy and medium (easy is original set up)
+function startThisLevel(){
+  var easy = document.getElementById("easy");
+  var medium = document.getElementById("medium");
+  var reset = document.getElementById("reset");
+
+  var finalArrayClasses = [];
+  var everyClass = ["red", "red", "blue", "blue","hotpink", "hotpink", "purple", "purple", "orangered", "orangered", "gold", "gold", "teal", "teal", "olive", "olive"];
+
+  easy.onclick = function(){
+    for(i=0; i<4; i++){
+      finalArrayClasses.push(everyClass[i]);
+    }
+    return finalArrayClasses;
+  };
+
+  medium.onclick = function(){
+    for(i=0; i<16; i++){
+      finalArrayClasses.push(everyClass[i]);
+    }
+    return finalArrayClasses;
+  };
+}
+
 document.getElementById("reset").addEventListener("click", resetBoard);
 
 document.getElementById("start").addEventListener("click", startBoard);
+
+document.getElementById("medium").addEventListener("click", startThisLevel);
+
+document.getElementById("easy").addEventListener("click", startThisLevel);
 
 
 //TODO = make arrayOfClasses2 = ["red", "red", "blue", "blue", "hotpink", "hotpink", "purple", "purple", "orangered", "orangered", "gold", "gold", "teal", "teal", "olive", "olive"];
