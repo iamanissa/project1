@@ -1,6 +1,5 @@
 
-var arrayOfClasses = ["red", "red", "blue", "blue", "hotpink", "hotpink", "purple", "purple", "orangered", "orangered", "gold", "gold", "teal", "teal", "olive", "olive"];
-
+var arrayOfClasses = ["red", "red", "blue", "blue"];
 var board1 = document.querySelector("#board");
 
 //make start text disappear and toggle reset and start button visibility
@@ -94,6 +93,14 @@ function makeBoard(){
         win = document.querySelector(".win");
         playerWin += 1;
         if(playerWin === document.querySelectorAll("[data-color]").length){
+
+
+          var winDiv = document.createElement("div");
+          div.classList.add("win");
+          winDiv.appendChild(div);
+          div.setAttribute("data-color", newDeck[i]);
+
+          document.createElement
           console.log("You Win!");
           win.classList.remove("hidden");
         }
@@ -119,6 +126,3 @@ function shuffleDeck(array){
 document.getElementById("reset").addEventListener("click", resetBoard);
 
 document.getElementById("start").addEventListener("click", startBoard);
-
-
-//TODO = make arrayOfClasses2 = ["red", "red", "blue", "blue", "hotpink", "hotpink", "purple", "purple", "orangered", "orangered", "gold", "gold", "teal", "teal", "olive", "olive"];
