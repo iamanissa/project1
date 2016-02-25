@@ -102,7 +102,7 @@ function makeBoard(){
           var uFoundNode = document.createTextNode("You found all the matches.");
           para.appendChild(uFoundNode);
           //create h1 with text
-          var boldWin = document.createElement("h2");
+          var boldWin = document.createElement("h1");
           var winNode = document.createTextNode("Winner!");
           boldWin.appendChild(winNode);
           //paragraph and h1 to div
