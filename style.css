@@ -29,15 +29,15 @@ button{
 }
 
 #board{
-  width: 460px;
-  height: 460px;
+  width: 600px;
+  height: 600px;
   margin: 0 auto;}
 
 .color{
   border: 2px solid rgb(251, 0, 203);
   box-shadow: 0px 8px 6px -4px #777;
-  width: 200px;
-  height:200px;
+  width: 120px;
+  height:120px;
   background-color: white;
   border-radius: 20px;
   margin: 10px;
@@ -52,7 +52,32 @@ button{
   background: blue;
 }
 
+[data-color="hotpink"].active{
+  background: hotpink;
+}
+
+[data-color="purple"].active{
+  background: purple;
+}
+
+[data-color="orangered"].active{
+  background: orangered;
+
+}[data-color="gold"].active{
+  background: gold;
+}
+
+[data-color="teal"].active{
+  background: teal;
+}
+
+[data-color="olive"].active{
+  background: olive;
+}
+
+
 .grayAgain{
+  background-color: rgb(156, 151, 152);
   border:2px solid green;
 }
 

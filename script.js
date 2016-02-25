@@ -1,5 +1,6 @@
 
-var arrayOfClasses = ["red", "red", "blue", "blue"];
+var arrayOfClasses = ["red", "red", "blue", "blue", "hotpink", "hotpink", "purple", "purple", "orangered", "orangered", "gold", "gold", "teal", "teal", "olive", "olive"];
+
 var board1 = document.querySelector("#board");
 
 //make start text disappear and toggle reset and start button visibility
