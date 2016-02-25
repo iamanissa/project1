@@ -33,22 +33,23 @@ Bronze:
 
 -----------------------------------------
 Silver:
-Add Object oriented javascript principles.
-
 []As a user I should be able to choose between levels of difficulty so that I can test my memory with more cards.
 []As a user I should be able to race against the clock so that the game is more exciting/challenging.
+
+Add Object oriented javascript principles.
+Add levels with more cards.
 ------------------------------------------
 Gold:
-Add card design
-Add a side menu that allows for rules, restart button, and multiplayer, themes, and difficulty levels.
-
 []As a user I should be able to play the game against another person so that more people can enjoy the game.
 
+Add card design
+Add a side menu that allows for rules, restart button, and multiplayer, themes, and difficulty level buttons.
+----------------------------------------
+
 Unsolved Problems:
-CSS spacing is off. Cards are too far down.
 Design of cards needs enhancing.
 Adding pictures instead of colors
 Adding more cards and difficulty settings.
+Making code more 'general' instead of hard coding so that I can add more functionality easily.
 
-<!-- TODO: review scoring rubric -->
 <!-- TODO: answer questions for presentations: what would you differently and what did you not get to? -->
