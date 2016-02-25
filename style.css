@@ -83,9 +83,13 @@ button{
 
 .win{
   text-align: center;
-  color: white;
-  text-shadow: 2px 1px 1px #000;
-  font-size: larger;
+  background-color: rgb(110,2,120);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255,255,255,0.5) 0 3px 3px;
+  font-size: 25px;
 }
 
 .hidden{
