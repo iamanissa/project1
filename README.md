@@ -52,4 +52,6 @@ Adding pictures instead of colors
 Adding more cards and difficulty settings.
 Making code more 'general' instead of hard coding so that I can add more functionality easily.
 
+<!-- FIXME: when a person resets during the game, reset button doesn't work. reset is dependent on the user winning the game.  -->
+<!-- FIXME: cards can still show color after match found. -->
 <!-- TODO: answer questions for presentations: what would you differently and what did you not get to? -->
