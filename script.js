@@ -9,6 +9,7 @@ function startBoard(){
   makeBoard();
   isReset = document.getElementById("reset");
   isStart = document.getElementById("firstScreen");
+  // AM: Look into the `.toggle()` method. Could help in refactoring the next four lines...
   isStart.classList.remove("visible");
   isStart.classList.add("hidden");
   isReset.classList.remove("hidden");
@@ -18,6 +19,9 @@ function startBoard(){
 function resetBoard(){
   //remove winning text
   var wintext = document.querySelector(".winClass");
+  // AM: This line generates an error when the user tries to reset the game before winning/losing.
+  // AM: I'm guessing it's because there's no element with the class `winClass` before the game is over.
+  // AM: That being said, the game resets just fine with lines 20 and 24 are commented out. Perhaps you can fix this code by placing those lines in a conditional...
   wintext.parentNode.removeChild(wintext);
   //remove class color from cards to make them disappear.
   parent = document.getElementById("board");
@@ -62,12 +66,16 @@ function makeBoard(){
     });
   }
 
+  // AM: Can you think of a way to refactor `noMatch` and `yesMatch` into a single function?
+  // AM: This single function would need to take a few arguments...
+
   //if cards don't match, flip card backover, and allow user to try again.
   function noMatch(){
     for(i=0;i<cards.length; i++){
       // if visible is set remove it, otherwise add it
       if(cards[i].classList.contains("active")){
         flipCard = cards[i];
+        // AM: Nice use of `setTimeout` with `.bind()`.
         setTimeout(function(){
           this.classList.remove("active");
         }.bind(flipCard), 250);
@@ -95,6 +103,10 @@ function makeBoard(){
       if(cards[i].classList.contains("grayAgain")){
 
         playerWin += 1;
+        // AM: This is a long chunk of code. Anything we can do to shorten this? Some things to consider...
+        // AM: Do we need all these selectors? Looking at `var board = ...`
+        // AM: Are there selectors previously defined in your code we can use here, instead of declaring new ones?
+        // AM: Can we chain any of these DOM manipulation methods?
         if(playerWin === document.querySelectorAll("[data-color]").length){
           //create div and add winClass class to it.
           var winDiv = document.createElement("div");

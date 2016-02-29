@@ -1,5 +1,6 @@
 body{
   background-image: url("paintdrip.png");
+  /* AM: Nice, cross-browser support! */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -44,6 +45,10 @@ button{
   float: right;
 }
 
+/*
+  AM: Would need to test this out myself, but I have a hunch you could condense these next eight CSS selectors into a Javascript function that can apply the appropriate background color based on a color argument.
+  AM: Happy to give this a go during a 1:1 if you're interested.
+*/
 [data-color="red"].active{
   background: red;
 }
