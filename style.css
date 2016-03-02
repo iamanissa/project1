@@ -43,7 +43,7 @@ button{
   margin: 10px;
   float: right;
 }
-
+/*FIXME: refactor this as a js function maybe.*/
 [data-color="red"].active{
   background: red;
 }
