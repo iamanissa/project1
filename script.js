@@ -7,7 +7,7 @@ $(document).ready(function(){
 
     //make start text disappear and toggle reset and start button visibility
     function startBoard(){
-        $("h1").css("display","none");
+        $("h1").css("display","none"); 
         makeBoard();
         var isReset = $("#reset");
         var isStart = $("#firstScreen");
