@@ -1,7 +1,7 @@
 //FIXME: refactor global variables.
-
+//FIXME: naming conventions are bad everywhere.
 var arrayOfClasses = ["red", "red", "blue", "blue", "hotpink", "hotpink", "purple", "purple", "orangered", "orangered", "gold", "gold", "teal", "teal", "olive", "olive"];
-
+//FIXME: use jquery
 var board1 = document.querySelector("#board");
 
 //make start text disappear and toggle reset and start button visibility
@@ -10,6 +10,7 @@ function startBoard(){
     makeBoard();
     isReset = document.getElementById("reset");
     isStart = document.getElementById("firstScreen");
+    //FIXME: this kind of repeats, try toggle?
     isStart.classList.remove("visible");
     isStart.classList.add("hidden");
     isReset.classList.remove("hidden");
@@ -31,6 +32,7 @@ function resetBoard(){
 }
 
 //create a function that dynamically makes the board (for reusability)
+//FIXME: makeBoard function can be shortened into smaller functions.
 function makeBoard(){
     var newDeck = shuffleDeck(arrayOfClasses);
     for(i=0;i<newDeck.length; i++){
@@ -88,15 +90,17 @@ function makeBoard(){
             }
         }
     }
-
+    //FIXME: make this long function smaller...
     //if all cards have grayAgain class then you have found all matches and won game.
     function gameWon(){
         var playerWin = 0;
         for(i=0;i<cards.length; i++){
+            //FIXME: questions: can these if statements be one if statement?
             if(cards[i].classList.contains("grayAgain")){
-
+                //FIXME: naming conventions for variables are horrible here. win this win that.
                 playerWin += 1;
                 if(playerWin === document.querySelectorAll("[data-color]").length){
+                    //FIXME: possibly use jquery chaining.
                     //create div and add winClass class to it.
                     var winDiv = document.createElement("div");
                     winDiv.classList.add("winClass");
